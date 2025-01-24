@@ -1,0 +1,25 @@
+Aligning HISAT2 CVS9:2_highrisk Thu Jul 1 13:01:13 CEST 2021
+Time loading forward index: 00:00:06
+Time loading reference: 00:00:01
+Multiseed full-index search: 00:43:39
+55288788 reads; of these:
+  55288788 (100.00%) were paired; of these:
+    11958833 (21.63%) aligned concordantly 0 times
+    41974275 (75.92%) aligned concordantly exactly 1 time
+    1355680 (2.45%) aligned concordantly >1 times
+    ----
+    11958833 pairs aligned concordantly 0 times; of these:
+      824063 (6.89%) aligned discordantly 1 time
+    ----
+    11134770 pairs aligned 0 times concordantly or discordantly; of these:
+      22269540 mates make up the pairs; of these:
+        11677449 (52.44%) aligned 0 times
+        9313456 (41.82%) aligned exactly 1 time
+        1278635 (5.74%) aligned >1 times
+89.44% overall alignment rate
+Time searching: 00:43:42
+Overall time: 00:43:48
+[bam_sort_core] merging from 52 files...
+[E::hts_idx_push] Chromosome blocks not continuous
+samtools index: failed to create index for "/proj/uppstore2018034/santhilal/Vestibular_schwannoma_proj/aligned/CVS9_sorted.bam": No such file or directory
+Alignment completed CVS9:2_highrisk Thu Jul 1 13:49:44 CEST 2021

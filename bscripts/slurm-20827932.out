@@ -1,0 +1,25 @@
+Aligning HISAT2 SVS5:1_lowrisk Thu Jul 1 13:01:13 CEST 2021
+Time loading forward index: 00:00:06
+Time loading reference: 00:00:02
+Multiseed full-index search: 00:37:30
+51837840 reads; of these:
+  51837840 (100.00%) were paired; of these:
+    9040295 (17.44%) aligned concordantly 0 times
+    41213524 (79.50%) aligned concordantly exactly 1 time
+    1584021 (3.06%) aligned concordantly >1 times
+    ----
+    9040295 pairs aligned concordantly 0 times; of these:
+      615282 (6.81%) aligned discordantly 1 time
+    ----
+    8425013 pairs aligned 0 times concordantly or discordantly; of these:
+      16850026 mates make up the pairs; of these:
+        9044490 (53.68%) aligned 0 times
+        6723635 (39.90%) aligned exactly 1 time
+        1081901 (6.42%) aligned >1 times
+91.28% overall alignment rate
+Time searching: 00:37:32
+Overall time: 00:37:38
+[bam_sort_core] merging from 48 files...
+[E::hts_idx_push] Unsorted positions on sequence #19: 49907843 followed by 49907793
+samtools index: failed to create index for "/proj/uppstore2018034/santhilal/Vestibular_schwannoma_proj/aligned/SVS5_sorted.bam": No such file or directory
+Alignment completed SVS5:1_lowrisk Thu Jul 1 13:44:18 CEST 2021

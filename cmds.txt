@@ -1,0 +1,22 @@
+
+
+wget http://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_38/GRCh38.primary_assembly.genome.fa.gz
+wget http://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_38/gencode.v38.basic.annotation.gtf.gz
+wget http://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_38/gencode.v38.long_noncoding_RNAs.gtf.gz
+
+
+
+cat /proj/uppstore2018034/santhilal/Vestibular_schwannoma_proj/reference/annotation/gencode.v38.long_noncoding_RNAs.gtf | grep -v "^#" | awk 'BEGIN{FS="\t"}{split($9,a,";"); if($3~"gene") print a[1]"\t"a[3]"\t"$1":"$4"-"$5"\t"a[2]"\t"$7}' | sed 's/gene_id "//' | sed 's/gene_name "//' | sed 's/gene_type "//'| sed 's/"//g' | sed '1igene_id\tGeneSymbol\tChromosome\tClass\tStrand' >  /proj/uppstore2018034/santhilal/Vestibular_schwannoma_proj/reference/annotation/gencode.v38.long_noncoding_RNAs_annotation.txt
+
+
+cat /proj/uppstore2018034/santhilal/Vestibular_schwannoma_proj/reference/annotation/gencode.v38.basic.annotation.gtf | grep -v "^#" | awk 'BEGIN{FS="\t"}{split($9,a,";"); if($3~"gene") print a[1]"\t"a[3]"\t"$1":"$4"-"$5"\t"a[2]"\t"$7}' | sed 's/gene_id "//' | sed 's/gene_name "//' | sed 's/gene_type "//'| sed 's/"//g' | sed '1igene_id\tGeneSymbol\tChromosome\tClass\tStrand' > /proj/uppstore2018034/santhilal/Vestibular_schwannoma_proj/reference/annotation/gencode.v38.basic.annotation.txt
+
+
+
+cat lnc_PC_correlation.txt | cut -f1,2 | awk 'BEGIN{FS="\t"}{ if( !seen[$1]++ ) order[++oidx] = $1; stuff[$1] = stuff[$1] $2 "," } END { for( i = 1; i <= oidx; i++ ) print order[i]"\t"stuff[order[i]] }' > > lnc_PC_correlation_groupped.txt
+
+cat lnc_PC_correlation.txt | cut -f1,2 | grep -v "^lnc" | awk 'BEGIN{FS="\t"}{ if( !seen[$1]++ ) order[++oidx] = $1; stuff[$1] = stuff[$1] $2 "," } END { for( i = 1; i <= oidx; i++ ) print order[i]"\t"stuff[order[i]] }' | awk -v FS="" 'BEGIN{print"SN\tPCGs_coexpressed\tlncRNA\tGeneSymbol\tPCGs"}{cnt=0;for (i=1;i<=NF;i++) if ($i==",") cnt++; print NR"\t"cnt"\t"$0}' | sed 's/\//\t/' > lnc_PC_correlation_stats.txt
+
+
+
+

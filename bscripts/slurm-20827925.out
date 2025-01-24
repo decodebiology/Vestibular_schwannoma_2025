@@ -1,0 +1,25 @@
+Aligning HISAT2 CVS4:2_highrisk Thu Jul 1 13:01:13 CEST 2021
+Time loading forward index: 00:00:06
+Time loading reference: 00:00:01
+Multiseed full-index search: 00:54:00
+68933100 reads; of these:
+  68933100 (100.00%) were paired; of these:
+    13058796 (18.94%) aligned concordantly 0 times
+    53959929 (78.28%) aligned concordantly exactly 1 time
+    1914375 (2.78%) aligned concordantly >1 times
+    ----
+    13058796 pairs aligned concordantly 0 times; of these:
+      814250 (6.24%) aligned discordantly 1 time
+    ----
+    12244546 pairs aligned 0 times concordantly or discordantly; of these:
+      24489092 mates make up the pairs; of these:
+        13362014 (54.56%) aligned 0 times
+        9727196 (39.72%) aligned exactly 1 time
+        1399882 (5.72%) aligned >1 times
+90.31% overall alignment rate
+Time searching: 00:54:03
+Overall time: 00:54:09
+[bam_sort_core] merging from 64 files...
+[E::hts_idx_push] Unsorted positions on sequence #1: 201875122 followed by 201874948
+samtools index: failed to create index for "/proj/uppstore2018034/santhilal/Vestibular_schwannoma_proj/aligned/CVS4_sorted.bam": No such file or directory
+Alignment completed CVS4:2_highrisk Thu Jul 1 14:02:01 CEST 2021
